@@ -1,0 +1,22 @@
+[package]
+name = "sc2plus2"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# Comment this in if you want to use the gcn crate in your rom hack.
+# It requires the operating system symbols to be resolved via a map.
+# gcn = { git = "https://github.com/CryZe/gcn", features = ["panic"] }
+
+[lib]
+crate-type = ["staticlib"]
+
+[profile.dev]
+panic = "abort"
+opt-level = 1
+
+[profile.release]
+panic = "abort"
+lto = true

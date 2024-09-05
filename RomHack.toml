@@ -1,0 +1,23 @@
+[info]
+game-name = "sc2plus2"
+
+[src]
+iso = "grseaf.iso" # Provide the path of the game's ISO
+patch = "patch.asm"
+map = "sc2plus/sc2.map"
+
+[build]
+map = "build/GRSE00.map"
+iso = "build/sc2plus2.iso"
+
+[link]
+entries = ["apply_lib_hooks"] # Enter the exported function names here
+base = "0x8047_6000" # Enter the start address of the Rom Hack's code here
+libs = ["sc2plus.a"]
+
+[files]
+# You may replace or add new files to the game here
+# "path/to/file/in/iso" = "path/to/file/on/harddrive"
+"sc2plus/sc2.map" = "files/sc2.map"
+"opening.bnr" = "files/opening.bnr"
+"root.olk" = "files/root.olk"
